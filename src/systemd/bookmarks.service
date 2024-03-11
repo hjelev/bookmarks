@@ -1,0 +1,13 @@
+[Unit]
+Description=Bookmarks
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/git/bookmarks/src
+Environment="PATH=/home/pi/git/bookmarks/src/venv/bin"
+Environment="PYTHONPATH=${PYTHONPATH}:/home/pi/git/bookmarks/src"
+ExecStart=/home/pi/git/bookmarks/venv/bin/gunicorn main:app -b 0.0.0.0:8080
+
+[Install]
+WantedBy=multi-user.target

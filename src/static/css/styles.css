@@ -1,0 +1,36 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #24282c !important;
+        color: #f8f9fa !important;
+    }
+    .list-group-item {
+        background-color: #343a40 !important;
+        color: #f8f9fa !important;
+    }
+    .list-group-item-folder {
+        background-color: #2f343a !important;
+        color: #f8f9fa !important;
+    }
+    
+    .card {
+        background-color: #343a40 !important;
+        color: #f8f9fa !important;
+    }
+    .card-header {
+        background-color: #2f343a !important;
+        color: #f8f9fa !important;
+    }
+    .card-header a {
+        color: #f5f4d4; /* Change to whatever color you want */
+    }
+    a {
+        color: #90b8e0; /* Change to whatever color you want */
+    }
+    a:hover {
+        color: #ffffff; /* Change to whatever color you want */
+        text-decoration: none;
+    }
+}
+    a:hover {
+        text-decoration: none;
+    }

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Bookmarks {% if folder_path %} : {{ folder_path }}{% endif %}
+{% endblock %}
+
+{% block content %}
+        <h1 class="my-4"><a href="/"> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks</a>
+        {% if folder_path %} : {{ folder_path }} </p>{% endif %} </h1>
+        <ul class="list-group">
+            {% for item in files_and_folders %}
+                {% if item.is_file %}
+                    {% for row in item.content %}
+                    <li class="list-group-item "> <a href="{{ row.url}}" title="{{ row.description }}" target="_blank"> <i class="fas fa-bookmark"></i> {{ row.name }}</a> </li>
+                    {% endfor %}
+                {% else %}
+                <li class="list-group-item list-group-item-folder"><a href="{{ item.path }}"><i class="fas fa-folder"></i> {{ item.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if parent_folder %}
+            <li class="list-group-item "><a href="{{ parent_folder }}"><i class="fas fa-arrow-left"></i> ...</a></li>
+            {% endif %}
+        </ul>
+{% endblock %}

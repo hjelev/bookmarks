@@ -1,0 +1,2 @@
+| url | name | description |
+| https://picresize.com/|picresize|The original FREE picture resize and crop tool since 2005! Resize, crop, compress, add effects to your images, photos, and screenshots for free!|

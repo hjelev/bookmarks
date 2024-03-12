@@ -15,9 +15,11 @@ Bookmarks
                         <h2><a href="/{{ category.name }}"> {{ category.name }} </a> </h2>
                     </div>
                     <div class="card-body">
+                        <p>
                         {% for link in category.links %}
-                        <p><a href="{{ link.url }}" title=" {{ link.description }} " target="_blank"><i class="fas fa-bookmark"></i>  {{ link.title }}</a></p>
+                        <a href="{{ link.url }}" title=" {{ link.description }} " target="_blank"><i class="fas fa-bookmark"></i>  {{ link.title }}</a></br>
                         {% endfor %}
+                    </p>
                     </div>
                 </div>
                 {% endfor %}

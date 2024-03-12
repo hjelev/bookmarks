@@ -32,19 +32,20 @@
         text-decoration: none;
     }
 }
-    a:hover {
-        text-decoration: none;
-    }
+a:hover {
+    text-decoration: none;
+}
 
-    .card, .list-group {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+.card, .list-group {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-    .card-header,  .card  {
-        border-top-left-radius: 15px !important;
-    }
-     .card, .card-body  {
-        border-bottom-right-radius: 5px !important;
-        border-top-right-radius: 5px!important; 
-        border-bottom-left-radius: 5px!important;
-    }
+.card-header,.card  {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+h2 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 1.5rem;
+}

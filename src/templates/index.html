@@ -11,7 +11,7 @@ Bookmarks {% if folder_path %} : {{ folder_path }}{% endif %}
             {% for item in files_and_folders %}
                 {% if item.is_file %}
                     {% for row in item.content %}
-                    <li class="list-group-item "> <a href="{{ row.url}}" title="{{ row.description }}" target="_blank"> <i class="fas fa-bookmark"></i> {{ row.name }}</a> </li>
+                    <li class="list-group-item "> <a href="{{ row.url}}" target="_blank"> <i class="fas fa-bookmark"></i> {{ row.name }}</a>{% if row.description %} - {{ row.description }} {% endif %}</li>
                     {% endfor %}
                 {% else %}
                 <li class="list-group-item list-group-item-folder"><a href="{{ item.path }}"><i class="fas fa-folder"></i> {{ item.name }}</a></li>

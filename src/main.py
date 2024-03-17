@@ -35,7 +35,7 @@ def load_user(user_id):
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -46,7 +46,7 @@ def login():
             login_user(user)
             return redirect(url_for('add_link'))
 
-    return render_template('login.html')
+    return render_template('login.html', title=config['DEFAULT']['title'])
 
 
 def get_categories(path=''):
@@ -82,7 +82,7 @@ def add_link():
             message = f'Error: {e}'
     categories = get_categories()
 
-    return render_template('add_link.html', categories=categories, message=message)
+    return render_template('add_link.html', categories=categories, message=message, title=config['DEFAULT']['title'])
 
 
 @app.route('/')
@@ -111,7 +111,7 @@ def home():
                 'links': links
             })
 
-    return render_template('home.html', categories=data)
+    return render_template('home.html', categories=data, title=config['DEFAULT']['title'])
 
 
 @app.route('/<path:folder_path>')
@@ -143,7 +143,7 @@ def folder(folder_path):
     else:
         parent_folder = None
     files_and_folders = sorted(files_and_folders, key=lambda x: x['is_file'])
-    return render_template('index.html', files_and_folders=files_and_folders, parent_folder=parent_folder, folder_path=folder_path)
+    return render_template('index.html', files_and_folders=files_and_folders, parent_folder=parent_folder, folder_path=folder_path, title=config['DEFAULT']['title'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

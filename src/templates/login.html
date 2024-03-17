@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block title %}
-Bookmarks
+{{ title }}
 {% endblock %}
 
 {% block content %}
-<h1> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks
-    {% if folder_path %} : {{ folder_path }} </p>{% endif %} </h1>
+
     <div class="col-md-3">
     <h2>Login</h2>
+    <hr>
     <form action="/login" method="post">
         <div class="form-group">
             <label for="username">Username:</label>

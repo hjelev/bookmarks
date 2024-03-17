@@ -13,9 +13,24 @@
     </head>
 <body>
     <div class="container">
-    {% block content %}
+        <div class="row">
+            <div class="col-8 d-flex align-items-center">
+                <img src="{{  url_for('static', filename='small_bookmark.png') }}">
+                <h1><a href="{{ url_for('home') }}">{{ title }} {% if folder_path %} : {{ folder_path }} {% endif %}</a></h1> 
+            </div>
+            <div class="col-4 text-right align-self-center">
+                {% if current_user.is_authenticated %}
+                    <i class="fas fa-plus-circle"></i> <a href="{{ url_for('add_link') }}" class="menu-link">Add Link</a>
+                    <i class="fas fa-sign-out-alt"></i> <a href="{{ url_for('logout') }}" class="menu-link">Logout</a>
+                {% else %}
+                    <i class="fas fa-sign-in-alt"></i> <a href="{{ url_for('login') }}" class="menu-link">Login</a>
+                {% endif %}
+            </div>
+        </div>
+        <br>
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
     </div>
 </body>
 </html>

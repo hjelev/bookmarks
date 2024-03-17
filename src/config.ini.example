@@ -1,4 +1,5 @@
 [DEFAULT]
+title = Bookmarks
 db_dir = ../data
 links_on_home_page = 5
 default_file_name = links.md

@@ -35,7 +35,9 @@
         background-color: #343a40 !important;
         color: #f8f9fa !important;
     }
-}
+    hr {
+        background-color: #f8f9fa !important;
+    }
 a:hover {
     text-decoration: none;
 }
@@ -59,4 +61,7 @@ h2 {
     margin-right: 0px !important;
     margin-left: -5px !important;
     height: 90%;
+}
+.menu-link {
+    margin-right: 20px;
 }

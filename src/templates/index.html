@@ -5,7 +5,7 @@ Bookmarks {% if folder_path %} : {{ folder_path }}{% endif %}
 {% endblock %}
 
 {% block content %}
-        <h1 class="my-4"><a href="/"> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks</a>
+        <h1><a href="/"> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks</a>
         {% if folder_path %} : {{ folder_path }} </p>{% endif %} </h1>
         <ul class="list-group">
             {% for item in files_and_folders %}

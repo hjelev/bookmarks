@@ -5,12 +5,14 @@ Bookmarks
 {% endblock %}
 
 {% block content %}
-        <h1 class="my-4"> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks
+        <h1> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks
         {% if folder_path %} : {{ folder_path }} </p>{% endif %} </h1>
         <div class="container">
-            <div class="d-flex flex-wrap">
+            <div class="row">
+
                 {% for category in categories %}
-                <div class="card mb-4 flex-fill mr-4" style="width: 30%;">
+                 <div class="col-md-4">
+                    <div class="card mb-4 flex-fill mr-4">
                     <div class="card-header">
                         <h2><a href="/{{ category.name }}"> {{ category.name }} </a> </h2>
                     </div>
@@ -20,6 +22,7 @@ Bookmarks
                         <a href="{{ link.url }}" title=" {{ link.description }} " target="_blank"><i class="fas fa-bookmark"></i>  {{ link.title }}</a></br>
                         {% endfor %}
                     </p>
+                    </div>
                     </div>
                 </div>
                 {% endfor %}

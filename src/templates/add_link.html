@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Bookmarks
+{% endblock %}
+
+{% block content %}
+<h1 class="my-4"> <img src="{{  url_for('static', filename='small_bookmark.png') }}"> Bookmarks
+    {% if folder_path %} : {{ folder_path }} </p>{% endif %} </h1>
+
+<form action="/add_link" method="post">
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" id="category" name="category">
+            {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="url">URL:</label>
+        <input type="url" class="form-control" id="url" name="url" required>
+    </div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description"></textarea>
+    </div>
+    {% if message %} <p class="text-success">{{ message }}</p> {% endif %}
+    <button type="submit" class="btn btn-primary">Add Link</button>
+    <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
+</form>
+{% endblock %}
